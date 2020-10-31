@@ -1,0 +1,113 @@
+<!doctype html>
+
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:100&display=swap');
+
+    html {
+        overflow: auto;
+        height: 45rem;
+        width: 40rem;
+        background-color: #f59f87;
+
+    }
+
+    body {
+        font-family: 'Barlow', sans-serif;
+        justify-content: center;
+        position: absolute;
+
+    }
+
+    .header {
+        background-color: #ed7f61;
+        width: 39rem;
+
+    }
+
+    .header img {
+        height: 30%;
+        width: 30%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .header hr {
+        margin-left: 0.4vw;
+        margin-right: 0.4vw;
+    }
+
+    .inputbox button {
+        background: transparent;
+        border: 2px solid white;
+        border-radius: 1.5rem;
+        color: white;
+        font-size: 4vw;
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+        padding-right: 0.9rem;
+        padding-left: 0.9rem;
+
+        margin-left: 41%;
+        /* margin-left: auto; */
+
+    }
+
+    .inputbox button:hover {
+        background-color: #eb6746;
+        /* Green */
+        color: white;
+        border: none;
+    }
+
+    .inputbox textarea {
+        font-family: 'Barlow', sans-serif;
+        outline: none;
+        border: 4px solid white;
+        background-color: transparent;
+        border-radius: 2vw;
+        color: white;
+        font-size: 1.2rem;
+        margin-left: 10%;
+    }
+
+    .inputbox textarea::placeholder {
+        color: #fff;
+    }
+</style>
+<script src="jquery-3.1.1.min.js"></script>
+<script src="popup.js"></script>
+
+
+<body>
+    <div class="header" style="justify-content:center;">
+        <img src="icon.png">
+
+
+    </div>
+
+
+    <div class="inputbox" style="justify-content: center;">
+
+        <p style="margin-left:25%;color: white;font-size:2rem;  font-weight: bold;
+        ">INSERT TEXT: </p>
+        <span class="message2" style="margin-left:22%; font-family: 'Barlow', sans-serif;
+        color:white;font-size:1rem;"></span>
+        <hr style="color:white; margin-left:2vw; margin-right:2vw;">
+        <span class="autoURL" style="margin-left:1%;font-family: 'Barlow', sans-serif;
+        color:white;font-size:1rem;"></span>
+        <br>
+        <br>
+        <textarea rows="6" cols="53" class="urltyping"></textarea>
+        <br>
+        <br>
+
+        <button class="urlbutton">SUBMIT</button>
+    </div>
+</body>
+
+</html>

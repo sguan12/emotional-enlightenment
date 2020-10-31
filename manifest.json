@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+  
+    "name": "e^2",
+    "description": "Emotional assessment of articles",
+    "version": "1.0",
+  
+    "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html",
+      "default_title": "Click for sentiment analysis of text"
+    },
+  
+    "permissions": [
+            "tabs","storage"
+          ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "commands": {
+           "refresh_url": {
+             "suggested_key": {
+               "default": "Alt+R",
+               "mac": "Alt+R"
+             },
+             "description": "Refresh the defined url"
+           }
+    },
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
+  }
