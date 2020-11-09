@@ -1,8 +1,5 @@
 
-
-
 var request = new XMLHttpRequest();
-
 
 function message(val) {
     $(".message").text(val);
@@ -15,17 +12,11 @@ function autoURL(val) {
     $(".autoURL").text(val);
 }
 
-
 function everything(num) {
     message2(num);
-
 }
 
 var _gaq = _gaq || [];
-//first variable: url-link
-//   _gaq.push(['_setAccount', 'UA-84918034-1']);
-//   _gaq.push(['_trackPageview']);
-//second variable: textinput
 _gaq.push(['second._setAccount', 'UA-84918034-2']);
 _gaq.push(['second._trackPageview']);
 
@@ -37,17 +28,6 @@ _gaq.push(['second._trackPageview']);
 })();
 
 $(document).ready(function () {
-    //set input to previously saved value
-    // chrome.storage.local.get("definedURL", function(result){
-    //   if(result.definedURL!=undefined){
-    //     $(".urlinput").attr("placeholder",result.definedURL);
-
-    //   }else{
-    //     $(".urlinput").attr("placeholder","type url here...");
-    //   }
-    // });
-
-
 
     //set word input to previous value
     chrome.storage.local.get("definedURL2", function (result) {
@@ -59,25 +39,15 @@ $(document).ready(function () {
         }
     });
 
-
-
     //handle update
     $(".urlbutton").click(function () {
-        //   $(".message").text($(".urlinput").val());
         $(".message2").text($(".urltyping").val());
 
-
-        //   chrome.storage.local.set({'definedURL': $(".urlinput").val()}, function() {
-        //         // Notify user is saved
-        //         message('Settings saved');
-        //         _gaq.push(['_trackEvent', 'url_updated', $(".urlinput").val()]);
-        //       });
         message("Settings saved");
         chrome.tabs.query({ 'active': true, 'lastFocusedWindow': true }, function (tabs) {
             var url = tabs[0].url;
             autoURL("URL (auto): " + url);
         });
-
 
         //textarea box
         chrome.storage.local.set({ 'definedURL2': $(".urltyping").val() }, function () {
@@ -114,8 +84,6 @@ $(document).ready(function () {
                 .then((data) =>
                     message2('The emotional assessment value of this article is ' + data.documentSentiment.score))
                 .catch((err) => console.log(err));
-
-            // _gaq.push(['second._trackEvent', 'url_updated', str]);
         });
 
     });
